@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="layout.css" />
+		<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="main-menu.js"></script>
+	</head>
+	<body>
+		<div id="wrapper" style="max-width:${layoutWidth}px !important">
+			<header id="header" class="clearfix">
+				<h3 id="ledger-title">${PRODUCT}</h3>
+				<div id="site-logo">
+					<a href="index.html">
+						<img src="logo.svg"/>
+					</a>
+				</div>
+				<nav id="navigation" role="navigation">
+					<div id="main-menu">
+						<ul class="menu" id="nav">
+							<li class="selected">
+								<a href="index.html">General</a>
+							</li>
+							<li>
+								<a href="buildprop.html">Build</a>
+							</li>
+							<li>
+								<a href="features.html">Features</a>
+							</li>
+							<li>
+								<a href="locales.html">Locales</a>
+							</li>
+							<li>
+								<a href="libraries.html">Libraries</a>
+							</li>
+							<li>
+								<a href="http://www.onyxbits.de/droidentify" target="_blank">Help
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+
+			<div id="main" class="clearfix">
+				<div id="primary">
+					<section id="content" role="main">
+						<div id="content-wrap">
+							${CONTENT}
+						</div>
+					</section>
+				</div>
+				<aside id="sidebar" role="complementary">
+					<div class="block block-block">
+						<h2>Files</h2>
+						<div class="content">
+							<ul>
+								<li>
+									<a href="fullreport.zip">fullreport.zip</a> (contains all files)
+								</li>
+								<li>
+									<a href="build.prop">build.prop</a> (original version)
+								</li>
+								<li>
+									<a href="build_extra.prop">build_extra.prop</a> (enhanced version for <a href="http://www.onyxbits.de/dummydroid">Dummy Droid</a>)
+								</li>
+							</ul>
+						</div>
+					</div>
+				</aside>
+			</div>
+
+			<footer id="footer-bottom">
+				<div id="bottom" class="clearfix">
+					<div class="copyright">Copyright &copy;
+						2015,
+						<a href="http://www.onyxbits.de">Onyxbits</a>
+					</div>
+					<div class="credit">
+						<a href="http://www.onyxbits.de/droidentify">Droidentify</a> ${APPVERSION}
+					</div>
+				</div>
+			</footer>
+		</div>
+		<a name="bottom" />
+	</body>
+</html>
+
