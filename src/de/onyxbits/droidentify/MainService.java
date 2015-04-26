@@ -138,17 +138,18 @@ public class MainService extends Service {
 		ZipOutputStream zout = new ZipOutputStream(new BufferedOutputStream(zdest));
 		byte data[] = new byte[BUFFER];
 		for (int i = 0; i < files.length; i++) {
-			FileInputStream fi = new FileInputStream(files[i]);
+			FileInputStream fi = new FileInputStream(new File(dest,files[i]));
 			BufferedInputStream origin = new BufferedInputStream(fi, BUFFER);
-			ZipEntry entry = new ZipEntry(files[i].substring(files[i].lastIndexOf("/") + 1));
+			ZipEntry entry = new ZipEntry("/"+files[i]);
 			zout.putNextEntry(entry);
 			int count;
 			while ((count = origin.read(data, 0, BUFFER)) != -1) {
-				out.write(data, 0, count);
+				zout.write(data, 0, count);
 			}
 			origin.close();
 		}
 		zout.close();
+		zdest.close();
 	}
 
 	private Map<String, Object> createModel() throws IOException {
