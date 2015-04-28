@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="Neues Dokument 1">
+   sodipodi:docname="logo.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -55,9 +55,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.81340817"
-     inkscape:cx="111.41549"
-     inkscape:cy="526.18109"
+     inkscape:zoom="6.936"
+     inkscape:cx="125"
+     inkscape:cy="25"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -74,7 +74,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -94,6 +94,6 @@
          id="tspan2991"
          x="-3.6313801"
          y="1039.8716"
-         style="fill:url(#linearGradient3767);fill-opacity:1">Droidendify</tspan></text>
+         style="fill:url(#linearGradient3767);fill-opacity:1">Droidentify</tspan></text>
   </g>
 </svg>
