@@ -28,6 +28,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.os.IBinder;
 import android.provider.Settings.Secure;
 import android.support.v4.content.LocalBroadcastManager;
@@ -138,9 +139,9 @@ public class MainService extends Service {
 		ZipOutputStream zout = new ZipOutputStream(new BufferedOutputStream(zdest));
 		byte data[] = new byte[BUFFER];
 		for (int i = 0; i < files.length; i++) {
-			FileInputStream fi = new FileInputStream(new File(dest,files[i]));
+			FileInputStream fi = new FileInputStream(new File(dest, files[i]));
 			BufferedInputStream origin = new BufferedInputStream(fi, BUFFER);
-			ZipEntry entry = new ZipEntry("/"+files[i]);
+			ZipEntry entry = new ZipEntry("/" + files[i]);
 			zout.putNextEntry(entry);
 			int count;
 			while ((count = origin.read(data, 0, BUFFER)) != -1) {
@@ -208,6 +209,29 @@ public class MainService extends Service {
 		}
 
 		model.put("IDENTIFIERS", ids);
+
+		Vector<Tuple> paths = new Vector<Tuple>();
+		paths.add(new Tuple("External Storage", Environment.getExternalStorageDirectory()
+				.getAbsolutePath()));
+		paths.add(new Tuple("Music", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_MUSIC).getAbsolutePath()));
+		paths.add(new Tuple("Podcasts", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_PODCASTS).getAbsolutePath()));
+		paths.add(new Tuple("Ringtones", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_RINGTONES).getAbsolutePath()));
+		paths.add(new Tuple("Alarms", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_ALARMS).getAbsolutePath()));
+		paths.add(new Tuple("Notifications", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_NOTIFICATIONS).getAbsolutePath()));
+		paths.add(new Tuple("Pictures", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_PICTURES).getAbsolutePath()));
+		paths.add(new Tuple("Movies", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_MOVIES).getAbsolutePath()));
+		paths.add(new Tuple("Downloads", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_DOWNLOADS).getAbsolutePath()));
+		paths.add(new Tuple("Dcim", Environment.getExternalStoragePublicDirectory(
+				Environment.DIRECTORY_DCIM).getAbsolutePath()));
+		model.put("PATHS", paths);
 
 		return model;
 	}
