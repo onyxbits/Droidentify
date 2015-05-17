@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Droidentify</string>
+	<string name="share">Sdílet</string>
+	<string name="subjectline">Report Droidentify</string>
+	<string name="sharevia">Sdílet report přes</string>
+
+</resources>
